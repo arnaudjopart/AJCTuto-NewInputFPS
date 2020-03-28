@@ -10,6 +10,7 @@ public class FPSController_UsingActions : MonoBehaviour
 
     public InputAction m_moveAction;
     public InputAction m_lookAction;
+    public InputAction m_shootAction;
 
     [SerializeField]
     private float m_rotateSpeed;
@@ -17,7 +18,17 @@ public class FPSController_UsingActions : MonoBehaviour
     private float m_moveSpeed;
     private Vector3 m_rotation;
 
+    [SerializeField]
+    private GameObject m_bulletPrefab;
+    [SerializeField]
+    private Transform m_spawnPoint;
+    
     // Start is called before the first frame update
+    private void Awake()
+    {
+        m_shootAction.performed += _ctx => { Shoot(); };
+    }
+
     void Start()
     {
         
@@ -27,12 +38,14 @@ public class FPSController_UsingActions : MonoBehaviour
     {
         m_lookAction.Enable();
         m_moveAction.Enable();
+        m_shootAction.Enable();
     }
 
     private void OnDisable()
     {
         m_lookAction.Disable();
         m_moveAction.Disable();
+        m_shootAction.Disable();
     }
 
     // Update is called once per frame
@@ -43,6 +56,7 @@ public class FPSController_UsingActions : MonoBehaviour
 
         Look(look);
         Move(move);
+        
     }
     private void Move(Vector2 _moveVector)
     {
@@ -61,5 +75,10 @@ public class FPSController_UsingActions : MonoBehaviour
         m_rotation.y += _rotate.x * rotateSpeedPerFrame;
         m_rotation.x = Mathf.Clamp(m_rotation.x - _rotate.y * rotateSpeedPerFrame, -89, 89);
         transform.localEulerAngles = m_rotation;
+    }
+    
+    private void Shoot()
+    {
+        Instantiate(m_bulletPrefab, m_spawnPoint.position, m_spawnPoint.rotation);
     }
 }

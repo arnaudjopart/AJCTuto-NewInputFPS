@@ -13,11 +13,17 @@ public class FPSController_UsingActionAsset : MonoBehaviour
     private float m_rotateSpeed;
     private Vector3 m_rotation;
 
+    
+    [SerializeField]
+    private GameObject m_bulletPrefab;
+    [SerializeField]
+    private Transform m_spawnPoint;
     // Start is called before the first frame update
 
     private void Awake()
     {
         m_controls = new FPS_InputSystem();
+        m_controls.Gameplay.Shoot.performed += _ctx => { Shoot(); };
     }
 
     void Start()
@@ -64,5 +70,10 @@ public class FPSController_UsingActionAsset : MonoBehaviour
         m_rotation.y += _rotate.x * rotateSpeedPerFrame;
         m_rotation.x = Mathf.Clamp(m_rotation.x - _rotate.y * rotateSpeedPerFrame, -89, 89);
         transform.localEulerAngles = m_rotation;
+    }
+    
+    private void Shoot()
+    {
+        Instantiate(m_bulletPrefab, m_spawnPoint.position, m_spawnPoint.rotation);
     }
 }

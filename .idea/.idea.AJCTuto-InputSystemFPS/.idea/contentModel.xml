@@ -7,6 +7,7 @@
       <e p="AJCTuto-InputSystemFPS.sln" t="IncludeFlat" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Bullet.cs" t="Include" />
         <e p="FPS_InputSystem.cs" t="Include" />
         <e p="FPSController_UsingActionAsset.cs" t="Include" />
         <e p="FPSController_UsingActions.cs" t="Include" />

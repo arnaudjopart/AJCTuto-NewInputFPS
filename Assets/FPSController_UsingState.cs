@@ -6,7 +6,7 @@ using UnityEngine.InputSystem.Controls;
 
 public class FPSController_UsingState : MonoBehaviour
 {
-    private Keyboard m_keyboard;
+    
     [SerializeField]
     private float m_moveSpeed;
     [SerializeField]
@@ -14,6 +14,12 @@ public class FPSController_UsingState : MonoBehaviour
 
     private Vector3 m_rotation;
     private Mouse m_mouse;
+    private Keyboard m_keyboard;
+    
+    [SerializeField]
+    private Transform m_spawnPoint;
+    [SerializeField]
+    private GameObject m_bulletPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -29,11 +35,21 @@ public class FPSController_UsingState : MonoBehaviour
         
         var moveVector = GetMoveVector();
         var mouseDelta = new Vector2(m_mouse.delta.x.ReadValue(),m_mouse.delta.y.ReadValue());
+
+        if (m_mouse.leftButton.wasPressedThisFrame)
+        {
+            Shoot();
+        }
             
         Move(moveVector);
         Look(mouseDelta);
 
 
+    }
+
+    private void Shoot()
+    {
+        Instantiate(m_bulletPrefab, m_spawnPoint.position, m_spawnPoint.rotation);
     }
 
     private Vector2 GetMoveVector()

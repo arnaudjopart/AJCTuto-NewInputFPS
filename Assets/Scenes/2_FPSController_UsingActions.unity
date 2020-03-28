@@ -1256,6 +1256,36 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &678660419
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 678660420}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &678660420
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678660419}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.55}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1597118232}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1709,8 +1739,35 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Look
       m_Flags: 0
+  m_shootAction:
+    m_Name: Shoot
+    m_Type: 0
+    m_ExpectedControlType: Analog
+    m_Id: 6d9df0be-5329-4d27-afaf-5f98468e1ffb
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 81939429-63f8-4e1a-997e-a189dfe8ffcd
+      m_Path: <Mouse>/leftButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Shoot
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 2561094a-519c-4e6a-850b-9e8f21685305
+      m_Path: <Gamepad>/buttonEast
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Shoot
+      m_Flags: 0
   m_rotateSpeed: 60
   m_moveSpeed: 5
+  m_bulletPrefab: {fileID: 241204341448125608, guid: e33f52fa9e69dd345b7dc20195aae276,
+    type: 3}
+  m_spawnPoint: {fileID: 678660420}
 --- !u!1 &1018628704
 GameObject:
   m_ObjectHideFlags: 0
@@ -1832,7 +1889,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.454, y: -0.23299998, z: 0.548}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.3}
-  m_Children: []
+  m_Children:
+  - {fileID: 678660420}
   m_Father: {fileID: 963194228}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
