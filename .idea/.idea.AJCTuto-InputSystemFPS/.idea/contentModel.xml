@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\arnau\.Rider2019.1\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\arnau\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_AJCTuto-InputSystemFPS.1800625540.00" t="ExcludeRecursive" />
+    <e p="D:\Arnaud\Documents\GitHub\AJCTuto-InputSystemFPS" t="IncludeRecursive">
+      <e p="AJCTuto-InputSystemFPS.sln" t="IncludeFlat" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="FPS_InputSystem.cs" t="Include" />
+        <e p="FPSController_UsingActionAsset.cs" t="Include" />
+        <e p="FPSController_UsingActions.cs" t="Include" />
+        <e p="FPSController_UsingPlayerInput.cs" t="Include" />
+        <e p="FPSController_UsingState.cs" t="Include" />
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
