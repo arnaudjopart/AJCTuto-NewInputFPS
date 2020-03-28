@@ -2118,7 +2118,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh18944
+  m_Name: pb_Mesh18272
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2651,8 +2651,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_moveSpeed: 10
   m_rotateSpeed: 150
-  m_bulletPrefab: {fileID: 1291891262}
-  m_spawnPoint: {fileID: 0}
+  m_bulletPrefab: {fileID: 241204341448125608, guid: e33f52fa9e69dd345b7dc20195aae276,
+    type: 3}
+  m_spawnPoint: {fileID: 1291891263}
 --- !u!136 &963194231
 CapsuleCollider:
   m_ObjectHideFlags: 0
